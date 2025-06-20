@@ -108,9 +108,16 @@ local function LogToFail2Ban(ip, reason)
     if f then
         f:write(os.date("%Y-%m-%d %H:%M:%S") .. " [Anti-DDoS System] " .. reason .. ": " .. ip .. "\n")
         f:close()
+    else
+        print("Failed to open log file: " .. logFile)
     end
 end
 
--- Ví dụ gọi LogToFail2Ban khi phát hiện tấn công:
+-- Ví dụ bạn gọi khi phát hiện event đáng nghi
+-- Thay các chỗ LogToDiscord(...) thành:
 LogToFail2Ban(ip, "Blocked Connection")
+LogToFail2Ban(ip, "Bandwidth Abuse")
+LogToFail2Ban(ip, "Event Spam Block")
+LogToFail2Ban(ip, "VPN Block")
+LogToFail2Ban(ip, "Country Block")
 

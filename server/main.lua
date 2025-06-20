@@ -102,8 +102,6 @@ for _, event in pairs(Config.ProtectedEvents) do
     end)
 end
 
--- LogToFail2Ban function for writing log file for Fail2Ban
-
 function LogToFail2Ban(ip, reason)
     local logFile = '/var/log/n9-antiddos.log'
     local f = io.open(logFile, "a")

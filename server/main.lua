@@ -102,13 +102,15 @@ for _, event in pairs(Config.ProtectedEvents) do
     end)
 end
 
-function LogToFail2Ban(ip, reason)
-    local logFile = '/var/log/n9-antiddos.log'
+local function LogToFail2Ban(ip, reason)
+    local logFile = '/var/log/fivem-antiddos.log'
     local f = io.open(logFile, "a")
     if f then
-        f:write(os.date("%Y-%m-%d %H:%M:%S") .. " [N9 Anti-DDoS System] " .. reason .. ": " .. ip .. "\n")
+        f:write(os.date("%Y-%m-%d %H:%M:%S") .. " [Anti-DDoS System] " .. reason .. ": " .. ip .. "\n")
         f:close()
-    else
-        print("Failed to open log file: " .. logFile)
     end
 end
+
+-- Ví dụ gọi LogToFail2Ban khi phát hiện tấn công:
+LogToFail2Ban(ip, "Blocked Connection")
+

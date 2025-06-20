@@ -1,7 +1,7 @@
 # N9 Anti-DDoS System for FiveM
 
 **Version:** 1.0.0  
-**Author:** ChatGPT (N9 Edition)
+**Author:** N9DEVELOPMENT
 
 ---
 
